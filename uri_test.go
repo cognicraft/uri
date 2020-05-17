@@ -11,6 +11,7 @@ func TestExpand(t *testing.T) {
 		args map[string]interface{}
 		out  string
 	}{
+		{"http://localhost:8080/{id}", map[string]interface{}{"id": "foo"}, "http://localhost:8080/foo"},
 		{"http://localhost:8080/{?date}", map[string]interface{}{"date": "2017-07-13"}, "http://localhost:8080/?date=2017-07-13"},
 		{"http://localhost:8080/{?date,name}", map[string]interface{}{"date": "2017-07-13"}, "http://localhost:8080/?date=2017-07-13"},
 		{"http://localhost:8080/{?date,name}", map[string]interface{}{"date": "2017-07-13", "name": "foo"}, "http://localhost:8080/?date=2017-07-13&name=foo"},
